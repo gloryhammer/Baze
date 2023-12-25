@@ -1,0 +1,38 @@
+create table funkcija(
+funId int not null primary key,
+naziv varchar(50)
+)
+creaate table Odjeljenje(
+odjId int not null primary key;
+naziv varchar(50) not null;
+)
+create table osoblje(
+osId int not null primary key,
+ime varchar(25) not null,
+datzap date null,
+funId int,
+odjId int,
+constraint fk_osoblje_funkcija foreign key(funId)
+references funkcija(funId),
+constraint fk_osoblje_odjeljenje foreign key(odjId)
+references odjeljenje(odjId
+
+
+brisanje tabela:
+drop table<ime tabele>
+
+dodavanje kolone:
+alter table <ime tabele>
+add column <ime kolone> <tip kolone>
+
+brisanje kolone:
+alter table <ime>
+drop column <ime kolone>
+
+izmjena imena i definicije:
+alter table <ime tabele>
+change column <ime kolone> <novo ime kolone> <tip>
+
+izmjena samo definicije:
+alter table <ime>
+modify <ime kolone> <tip>

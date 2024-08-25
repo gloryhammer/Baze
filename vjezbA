@@ -1,3 +1,23 @@
+CREATE TABLE Jelo(
+ JeloID INT PRIMARY KEY,
+ NazivJela VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE Sastojci(
+ SastojakID INT,
+ Naziv VARCHAR(80),
+ CONSTRAINT pkSastojci PRIMARY KEY (SastojakID)
+);
+CREATE TABLE Sadrzaj(
+ JeloID INT,
+ SastojciID INT,
+ Mjera VARCHAR(10),
+ Kolicina INT,
+ CONSTRAINT pkSadrzaj PRIMARY KEY (JeloID, SastojciID),
+ CONSTRAINT fkJelo FOREIGN KEY (JeloID) REFERENCES Jelo(JeloID),
+ CONSTRAINT fkSastojci FOREIGN KEY (SastojakID) REFERENCES Sastojci(SastojakID)
+);
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 create DATABASE (ime baze podataka)
 USE (ime baze podataka)
 
@@ -19,10 +39,12 @@ constraint fk_osoblje_funkcija foreign key(funId)
 references funkcija(funId),
 constraint fk_osoblje_odjeljenje foreign key(odjId)
 references odjeljenje(odjId
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Foreign keys:
 CONSTRAINT <novi naziv fk> foreign key (naziv u tabeli) references <tabela>(primarni kljuc tabele)
-
+primary keys:
+CONSTRAINT <naziv> primary key(2 kljuca na koje se odnosi)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 brisanje tabela:
 drop table<ime tabele>
 
@@ -46,3 +68,6 @@ Dodavanje ograničenja:
 ALTER TABLE <table>
 ADD CONSTRAINT
 <definition>
+
+
+

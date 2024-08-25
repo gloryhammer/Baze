@@ -23,7 +23,7 @@ drop table<ime tabele>
 
 dodavanje kolone:
 alter table <ime tabele>
-add column <ime kolone> <tip kolone>
+add <ime kolone> <tip podatka kolone>
 
 brisanje kolone:
 alter table <ime>
@@ -31,7 +31,7 @@ drop column <ime kolone>
 
 izmjena imena i definicije:
 alter table <ime tabele>
-change column <ime kolone> <novo ime kolone> <tip>
+change <ime kolone> <novo ime kolone> <tip podatka>
 
 izmjena samo definicije:
 alter table <ime>

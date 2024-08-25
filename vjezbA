@@ -17,6 +17,8 @@ references funkcija(funId),
 constraint fk_osoblje_odjeljenje foreign key(odjId)
 references odjeljenje(odjId
 
+Foreign keys:
+CONSTRAINT <novi naziv fk> foreign key (naziv u tabeli) references <tabela>(primarni kljuc tabele)
 
 brisanje tabela:
 drop table<ime tabele>
@@ -36,3 +38,8 @@ change <ime kolone> <novo ime kolone> <tip podatka>
 izmjena samo definicije:
 alter table <ime>
 modify <ime kolone> <tip>
+
+Dodavanje ograničenja:
+ALTER TABLE <table>
+ADD CONSTRAINT
+<definition>
